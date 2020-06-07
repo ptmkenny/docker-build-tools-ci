@@ -124,12 +124,3 @@ RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/loca
 #         "behat/mink-extension:^2.2" \
 #         "behat/mink-goutte-driver:^1.2" \
 #         "drupal/drupal-extension:*"
-
-# CUSTOM: Get browsers for behat.
-RUN wget https://dl-ssl.google.com/linux/linux_signing_key.pub && sudo apt-key add linux_signing_key.pub
-RUN sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
-
-RUN	apt-get -y update && \
-	apt-get -y install google-chrome-stable
-
-RUN apt-get install -y firefox-esr
