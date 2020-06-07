@@ -23,7 +23,9 @@ RUN apt-get update && \
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl
 
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+# RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+# CUSTOM: Optional commands are not recognized with 7.4 image
+RUN docker-php-ext-configure gd
 RUN docker-php-ext-install gd
 
 RUN docker-php-ext-configure sodium
