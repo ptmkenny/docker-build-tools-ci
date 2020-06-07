@@ -114,13 +114,12 @@ RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer 
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local
 
 # Add Behat for more functional testing
-# CUSTOM: Behat is installed in Drupal.
-# RUN mkdir ~/behat && \
-#     cd ~/behat && \
-#     COMPOSER_BIN_DIR=/usr/local/bin \
-#     composer require \
-#         "behat/behat:^3.5" \
-#         "behat/mink:*" \
-#         "behat/mink-extension:^2.2" \
-#         "behat/mink-goutte-driver:^1.2" \
-#         "drupal/drupal-extension:*"
+# CUSTOM: Use Drupal Extension 4 + bex for screenshots.
+RUN mkdir ~/behat && \
+    cd ~/behat && \
+    COMPOSER_BIN_DIR=/usr/local/bin \
+    composer require \
+        "drupal/drupal-extension:^4.1" \
+        "bex/behat-screenshot:^2.1" \
+        "drupal/drupal-driver:^2.1" \
+        "genesis/behat-fail-aid:^3.5"
