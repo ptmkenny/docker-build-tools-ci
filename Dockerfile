@@ -1,5 +1,6 @@
 # Use an official Python runtime as a parent image
-FROM circleci/php:7.3-node-browsers
+# CUSTOM: FROM circleci/php:7.3-node-browsers
+FROM circleci/php:7.4-node-browsers
 
 # Switch to root user
 USER root
@@ -111,12 +112,22 @@ RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer 
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local
 
 # Add Behat for more functional testing
-RUN mkdir ~/behat && \
-    cd ~/behat && \
-    COMPOSER_BIN_DIR=/usr/local/bin \
-    composer require \
-        "behat/behat:^3.5" \
-        "behat/mink:*" \
-        "behat/mink-extension:^2.2" \
-        "behat/mink-goutte-driver:^1.2" \
-        "drupal/drupal-extension:*"
+# CUSTOM: Behat is installed in Drupal.
+# RUN mkdir ~/behat && \
+#     cd ~/behat && \
+#     COMPOSER_BIN_DIR=/usr/local/bin \
+#     composer require \
+#         "behat/behat:^3.5" \
+#         "behat/mink:*" \
+#         "behat/mink-extension:^2.2" \
+#         "behat/mink-goutte-driver:^1.2" \
+#         "drupal/drupal-extension:*"
+
+# CUSTOM: Get browsers for behat.
+RUN wget https://dl-ssl.google.com/linux/linux_signing_key.pub && sudo apt-key add linux_signing_key.pub
+RUN sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+
+RUN	apt-get -y update && \
+	apt-get -y install google-chrome-stable
+
+RUN apt-get install -y firefox-esr
