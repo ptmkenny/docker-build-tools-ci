@@ -5,6 +5,9 @@ FROM circleci/php:7.4-node-browsers
 # Switch to root user
 USER root
 
+# Install gulp
+RUN npm install -g gulp
+
 # Install necessary packages for PHP extensions
 RUN apt-get update && \
      apt-get install -y \
