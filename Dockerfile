@@ -83,7 +83,7 @@ RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n --working-dir=/usr/
 
 # Install Drush
 RUN mkdir -p /usr/local/share/drush
-RUN /usr/bin/env composer -n --working-dir=/usr/local/share/drush require drush/drush "^8"
+RUN /usr/bin/env composer -n --working-dir=/usr/local/share/drush require drush/drush "^10"
 RUN ln -fs /usr/local/share/drush/vendor/drush/drush/drush /usr/local/bin/drush
 RUN chmod +x /usr/local/bin/drush
 
@@ -111,7 +111,7 @@ RUN curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh |
 RUN mkdir ~/phpcs && cd ~/phpcs && COMPOSER_BIN_DIR=/usr/local/bin composer require squizlabs/php_codesniffer:^2.7
 
 # Add phpunit for unit testing
-RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer require phpunit/phpunit:^6
+RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer require phpunit/phpunit:^8
 
 # Add bats for functional testing
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local

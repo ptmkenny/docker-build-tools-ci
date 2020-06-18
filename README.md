@@ -8,6 +8,8 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 
 - [CircleCI PHP 7.4, Node, Headless browser Docker base image](https://hub.docker.com/r/circleci/php)
 - gulp
+- drush 10
+- phpunit 8
 
 ### Same as source image
 - [Terminus](https://github.com/pantheon-systems/terminus)
