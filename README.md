@@ -10,6 +10,7 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 - gulp
 - drush 10
 - phpunit 8
+- vim (useful for checking stuff when using ssh)
 
 ### Same as source image
 - [Terminus](https://github.com/pantheon-systems/terminus)

@@ -122,6 +122,8 @@ RUN mkdir ~/behat && \
     COMPOSER_BIN_DIR=/usr/local/bin \
     composer require \
         "drupal/drupal-extension:^4.1" \
-        "bex/behat-screenshot:^2.1" \
         "drupal/drupal-driver:^2.1" \
         "genesis/behat-fail-aid:^3.5"
+
+# CUSTOM: Install vim because CircleCI can't be bothered too.
+RUN apt-get update && apt-get install -y vim
