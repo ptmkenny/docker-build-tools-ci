@@ -9,6 +9,7 @@ USER root
 RUN npm install -g gulp
 
 # Install necessary packages for PHP extensions
+# Custom: Add vim
 RUN apt-get update && \
      apt-get install -y \
         dnsutils \
@@ -20,7 +21,8 @@ RUN apt-get update && \
         libjpeg62-turbo-dev \
         zlib1g-dev \
         libicu-dev \
-        g++
+        g++ \
+        vim
 
 # Add necessary PHP Extensions
 RUN docker-php-ext-configure intl
@@ -124,6 +126,3 @@ RUN mkdir ~/behat && \
         "drupal/drupal-extension:^4.1" \
         "drupal/drupal-driver:^2.1" \
         "genesis/behat-fail-aid:^3.5"
-
-# CUSTOM: Install vim because CircleCI can't be bothered too.
-RUN apt-get update && apt-get install -y vim
