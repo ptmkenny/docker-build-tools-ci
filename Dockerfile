@@ -126,4 +126,4 @@ RUN mkdir ~/behat && \
         "genesis/behat-fail-aid:^3.5"
 
 # CUSTOM: Install vim because CircleCI can't be bothered too.
-RUN sudo apt-get update && sudo apt-get install -y vim
+RUN apt-get update && apt-get install -y vim
