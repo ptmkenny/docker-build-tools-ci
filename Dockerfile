@@ -9,7 +9,7 @@ USER root
 RUN npm install -g gulp
 
 # Install necessary packages for PHP extensions
-# Custom: Add vim
+# Custom: Add vim & vnc4server metatcity
 RUN apt-get update && \
      apt-get install -y \
         dnsutils \
@@ -22,7 +22,9 @@ RUN apt-get update && \
         zlib1g-dev \
         libicu-dev \
         g++ \
-        vim
+        vim \
+        vnc4server \
+        metacity
 
 # Add necessary PHP Extensions
 RUN docker-php-ext-configure intl
