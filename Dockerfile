@@ -24,7 +24,8 @@ RUN apt-get update && \
         g++ \
         vim \
         vnc4server \
-        metacity
+        metacity \
+        x11vnc
 
 # Add necessary PHP Extensions
 RUN docker-php-ext-configure intl

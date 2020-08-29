@@ -12,6 +12,7 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 - phpunit 8
 - vim (useful for checking stuff when using ssh)
 - vnc4server / metacity (for vnc: https://circleci.com/docs/2.0/browser-testing/)
+- x11vnc (for automatically running vnc)
 
 ### Same as source image
 - [Terminus](https://github.com/pantheon-systems/terminus)
