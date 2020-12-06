@@ -8,6 +8,7 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 
 - [CircleCI PHP 7.4, Node, Headless browser Docker base image](https://hub.docker.com/r/circleci/php)
 - gulp
+- pa11y-ci
 - drush 10
 - phpunit 8
 - vim (useful for checking stuff when using ssh)
