@@ -70,8 +70,9 @@ RUN apt-get update
 RUN apt-get install -y ruby jq curl rsync
 RUN gem install circle-cli
 
-# Make sure we are on the latest version of Composer
-RUN composer selfupdate
+# Make sure we are on the latest version of Composer 1
+# The world is not ready for Composer 2...
+RUN composer selfupdate --1
 
 # Parallel Composer downloads
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
