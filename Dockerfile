@@ -9,7 +9,8 @@ USER root
 RUN npm install -g gulp
 
 # Install pa11y-ci
-RUN npm install -g pa11y-ci
+# https://github.com/puppeteer/puppeteer/issues/375#issuecomment-363466257
+RUN npm install -g pa11y-ci --unsafe-perm=true
 
 # Install necessary packages for PHP extensions
 # Custom: Add vim & vnc4server metatcity
