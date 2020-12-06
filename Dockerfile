@@ -9,7 +9,7 @@ USER root
 RUN npm install -g gulp
 
 # Install pa11y-ci
-npm install -g pa11y-ci
+RUN npm install -g pa11y-ci
 
 # Install necessary packages for PHP extensions
 # Custom: Add vim & vnc4server metatcity
