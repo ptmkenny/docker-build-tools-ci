@@ -14,6 +14,7 @@ RUN npm install -g pa11y-ci --unsafe-perm=true
 
 # Install lighthouse
 RUN npm install -g lighthouse
+RUN npm install -g circle-github-bot
 
 # Install necessary packages for PHP extensions
 # Custom: Add vim & vnc4server metatcity
