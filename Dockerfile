@@ -14,6 +14,7 @@ RUN npm install -g pa11y-ci --unsafe-perm=true
 
 # Install lighthouse
 RUN npm install -g lighthouse
+RUN npm install -g @lhci/cli
 RUN npm install -g lighthouse-batch
 RUN npm install -g lighthouse-ci
 RUN npm install -g circle-github-bot
