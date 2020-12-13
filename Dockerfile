@@ -17,7 +17,7 @@ RUN npm install -g lighthouse
 RUN npm install -g circle-github-bot
 
 # Install puppeteer for control of lighthouse
-RUN npm install -g puppeteer
+RUN npm install -g puppeteer --unsafe-perm=true
 RUN npm install -g chrome-launcher
 
 # Install necessary packages for PHP extensions
