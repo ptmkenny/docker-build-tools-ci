@@ -10,6 +10,7 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 - gulp
 - lighthouse
 - circle-github-bot (for posting lighthouse scores back to github)
+- puppeteer + chrome launcher (for controlling lighthouse)
 - pa11y-ci
 - drush 10
 - phpunit 8

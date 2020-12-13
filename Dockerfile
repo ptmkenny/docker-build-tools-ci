@@ -16,6 +16,10 @@ RUN npm install -g pa11y-ci --unsafe-perm=true
 RUN npm install -g lighthouse
 RUN npm install -g circle-github-bot
 
+# Install puppeteer for control of lighthouse
+RUN npm install -g puppeteer
+RUN npm install -g chrome-launcher
+
 # Install necessary packages for PHP extensions
 # Custom: Add vim & vnc4server metatcity
 RUN apt-get update && \
