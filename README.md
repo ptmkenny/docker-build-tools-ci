@@ -42,7 +42,6 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
   - behat
   - php_codesniffer
   - hub
-  - lab
 - Test scripts
 
 ## Branches
