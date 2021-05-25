@@ -7,6 +7,7 @@ This is a custom Dockerfile based on the [pantheon-public/build-tools-ci](https:
 ### Differences from source image
 
 - [CircleCI PHP 7.4, Node, Headless browser Docker base image](https://hub.docker.com/r/circleci/php)
+- composer 2
 - gulp
 - lighthouse
 - lhci (cli)

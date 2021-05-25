@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-# CUSTOM: FROM circleci/php:7.3-node-browsers
+# CUSTOM: FROM circleci/php:7.4-node-browsers
 FROM circleci/php:7.4-node-browsers
 
 # Switch to root user
@@ -81,12 +81,8 @@ RUN apt-get update
 RUN apt-get install -y ruby jq curl rsync
 RUN gem install circle-cli
 
-# Make sure we are on the latest version of Composer 1
-# The world is not ready for Composer 2...
-RUN composer selfupdate --1
-
-# Parallel Composer downloads
-RUN composer -n global require -n "hirak/prestissimo:^0.3"
+# Use composer 2
+RUN composer selfupdate --2
 
 # Create an unpriviliged test user
 RUN groupadd -g 999 tester && \
